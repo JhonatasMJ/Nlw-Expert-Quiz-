@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
-
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
     text-rendering:  optimizeLegibility;
@@ -10,21 +11,163 @@
     -webkit-text-size-adjust: 100%;
 }
 
+body {
+   background-color: #111; 
+}
 
 main {
     max-width: 648px;
     margin: 0 auto 64px;
     padding: 20px;
 }
-    ;
+    
+header {
+    margin-top: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #202024;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #f1f5f9 ;
+}
+
+.quiz-item h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    color: #e2e8f0;
+    background-color: #202024;
+    border:  2px solid #202024;
+    border-radius:  6px 6px 0px 0px;
+}
+
+.quiz-item h3::before {
+    counter-increment: quiz-item;
+    content: counter(quiz-item);
+    background-color: #3c3c41;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 50%;
+    flex-shrink: 0; /* Não vao se apertar */
+
+
+}
+
+
+.quiz-item { 
+    margin-top: 24px;
+    border: 1px solid #202024;
+    border-radius: 6px;
+}
+
+.quiz-item dl {
+    padding: 20px 24px;
+    display: grid;
+    gap: 4px;
+}
+
+#quiz {
+    counter-reset: quiz-item;
+}
+
+
+
+
+.quiz-item dl dt {
+    font-size: 14px;
+   line-height: 24px;
+   letter-spacing: 0;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   color: #e2e8f0;
+}
+
+input {
+    all: unset;
+    border: 1px solid #94a3b8;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0
+}
+
+
+
+input:checked {
+    border: 1px solid #8234E9;
+    box-shadow: 1px 1px 10px 1px #8234E9;
+    transition: 0.4s ease;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:checked::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #8234E9;
+    border-radius: 50%;
+}
+
 
 
 #acertos {
     text-align: center;
-    background-color: #a3e635;
+    background-color: #8234E9;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 12px;
+    color: #fff;
 }
+
+@media (min-width: 359px) and (max-width: 429px) {
+    .quiz-item h3 {
+        font-size: 0.850rem;
+        padding: 16px 8px;
+    }
+
+    .quiz-item dl dt {
+        font-size: 0.650rem;
+        line-height: 12px;
+    }
+
+    .quiz-item dl {
+        padding: 20px 12px;
+        gap: 8px;
+
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+
+    }
+
+
+
+
+

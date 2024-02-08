@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./github/Logo.svg" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <title>NLW-EXPERT</title>
 </head>
 <body>
 
-    <main>
+    <main >
+        <header>
+            <div class="logo">
 
-        <h1>Teste seus conhecimetos</h1>
-        <div id="quiz"></div>
+                <img src="./github/logo.svg" alt="">
+            </div>
+            <h1>Teste seus conhecimetos</h1>
+        </header>
+       
+        <div id="quiz" > </div>
          <template>
-             <div class="quiz-item">
+             <div class="quiz-item"  data-aos="fade-up"  data-aos-duration="1900">
                  <h3>Pergunta 01</h3>
              <dl>
                  <dt>
@@ -34,4 +42,8 @@
     
 </body>
 <script src="index.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </html>

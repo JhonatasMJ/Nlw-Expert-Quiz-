@@ -75,7 +75,8 @@ const perguntas = [
         pergunta: "Qual é a diferença entre 'null' e 'undefined' em JavaScript?",
         respostas: [
             "São iguais, apenas sinônimos",
-            "Null representa a ausência de valor atribuído intencionalmente, enquanto undefined indica falta de atribuição",
+            "Null indica ausência intencional de valor, undefined ocorre quando não há atribuição.",
+            
             "Undefined é usado para valores nulos em arrays",
         ],
         correta: 1
