@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    text-rendering:  optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+main {
+    max-width: 648px;
+    margin: 0 auto 64px;
+    padding: 20px;
+}
+    ;
+
+
+#acertos {
+    text-align: center;
+    background-color: #a3e635;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+}

@@ -95,6 +95,13 @@ const perguntas = [
 const quiz = document.querySelector('#quiz');
 const template = document.querySelector('template');
 
+/* Adicionar ou remover algo sem repetir */
+const corretas = new Set()
+
+const totalPerguntas = perguntas.length /* Pegar as 10 perguntas */
+const mostrarTotal = document.querySelector('#acertos span')
+mostrarTotal.textContent = corretas.size + ' de ' + totalPerguntas
+
 
 /* Pra cada item da pergunta */
 for (const item of perguntas) {
@@ -104,8 +111,27 @@ for (const item of perguntas) {
 
     for(let respostas of item.respostas) {
         const dt = quizItem.querySelector('dl dt').cloneNode(true)
-        dt.querySelector('span').textContent = respostas
+        dt.querySelector('span').textContent = respostas;
 
+        /* Pegar cada pergunta separada de 0 ao 9 */
+        dt.querySelector('input').setAttribute('name','perguntar-' + perguntas.indexOf(item)); 
+
+        /* Pegar valor das respostas */
+        dt.querySelector('input').value = item.respostas.indexOf(respostas)
+
+
+        /* Quando clicar no input e mudar */
+        dt.querySelector('input').onchange = (event) => {
+           const respostaCorreta = event.target.value == item.correta
+           
+            corretas.delete(item) /* Remover o valor caso mude de opção */
+              if  (respostaCorreta) { 
+                 corretas.add(item) /* Se a resposta tiver correta, guardar o valor */
+                }
+
+                mostrarTotal.textContent = corretas.size + ' de ' + totalPerguntas
+
+        }
 
         quizItem.querySelector('dl').appendChild(dt)
     }
